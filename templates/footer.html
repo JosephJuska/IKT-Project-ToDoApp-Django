@@ -1,0 +1,14 @@
+<footer>
+    <h1>To Do App</h1>
+    <div>
+        {% if is_auth %}
+        <a class="footer-user" href={% url "index" %}>{{username}}</a>
+        <a href={% url "logout" %}>Log out</a>
+        {% else %}
+        <a href={% url "index" %}>Home</a>
+        <a href={% url "login" %}>Login</a>
+        <a href={% url "register" %}>Register</a>
+        {% endif %}
+    </div>
+    <p>Copyright © 2023 - All rights reserved || Designed By: JosephJuska</p>
+</footer>

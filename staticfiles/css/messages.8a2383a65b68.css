@@ -1,0 +1,14 @@
+.message {
+    background-color: var(--white);
+    color: var(--pink);
+    font-family: var(--family);
+    font-size: 1.25rem;
+    border: 2px solid transparent;
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+.error {
+    color: var(--red);
+    border-color: var(--red);
+}

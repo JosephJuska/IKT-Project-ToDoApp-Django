@@ -1,0 +1,39 @@
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    background-color: var(--white);
+    padding: 3rem 0;
+    font-family: var(--font-family);
+    flex-wrap: wrap;
+}
+
+footer h1 {
+    font-size: 2rem;
+    color: var(--pink);
+}
+
+footer div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+footer div a {
+    font-size: 1.25rem;
+    color: var(--pink);
+    transition: all .3s ease;
+}
+
+footer div a:hover {
+    opacity: 0.6;
+}
+
+footer p {
+    color: var(--pink);
+    text-align: center;
+}

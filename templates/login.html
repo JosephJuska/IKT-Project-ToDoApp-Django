@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/messages.css' %}">
+  </head>
+  <body>
+    <section class="login-section">
+      <form class="login-form" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <h1>Login</h1>
+        <div class="form-div">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" placeholder="Username..." required> 
+        </div>
+        <div class="form-div">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" placeholder="Password..." required>
+        </div>
+        <div class="form-div">
+          <input type="submit" value="Login" name="submit">
+        </div>
+        <div class="form-div">
+          <p class="register-link">Have no account? <a href="{% url 'register' %}">Register</a></p>
+        </div>
+      </form>
+      
+      {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+            <li class="message {% if message.tags %} {{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </section>
+
+    {% include 'footer.html' %}
+  </body>
+</html>

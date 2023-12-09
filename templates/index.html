@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/messages.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    {% if is_auth %}
+    <link rel="stylesheet" href="{% static 'css/tasks.css' %}">
+    {% else %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% endif %}
+    <title>{% if is_auth %}Tasks List{% else %}To Do App{% endif %}</title>
+</head>
+<body>
+    {% if is_auth %}
+    {% include "tasks.html" with username=username %}
+    {% else %}
+    {% include "home.html" %}
+    {% endif %}
+    
+    {% include 'footer.html' with is_auth=is_auth username=username %}
+</body>
+</html>

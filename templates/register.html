@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" href="{% static 'css/messages.css' %}">
+  </head>
+  <body>
+    <section class="register-section">
+        <form class="register-form" method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            <h1>Register</h1>
+            <div class="form-div">
+                <label for="id_username">Username</label>
+                <input type="text" name="username" maxlength="150" required id="id_username" placeholder="Username...">
+                <div class="form-div-info">
+                    <p>150 characters or fewer. Letters, digits and @/./+/-/_ only.</p>
+                </div>
+            </div>
+            <div class="form-div">
+                <label for="id_email">Email</label>
+                <input type="email" name="email" maxlength="320" required id="id_email" placeholder="Email...">
+            </div>
+            <div class="form-div">
+                <label for="id_password1">Password</label>
+                <input type="password" name="password1" autocomplete="new-password" required id="id_password1" placeholder="New Password..." minlength="8">
+                <div class="form-div-info">
+                    <p>Your password can’t be too similar to your other personal information.</p>
+                    <p>Your password must contain at least 8 characters.</p>
+                    <p>Your password can’t be a commonly used password.</p>
+                    <p>Your password can’t be entirely numeric.</p>
+                </div>
+            </div>
+            <div class="form-div">
+                <label for="id_password2">Repeat Password</label>
+                <input type="password" name="password2" minlength="8" required id="id_password2" placeholder="Repeat Password...">
+            </div>
+            <input class="form-submit" type="submit" value="Register" name="submit">
+            <div class="form-div">
+                <p class="login-link">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+            </div>
+        </form>
+      
+        {% if form.errors %}
+            <ul>
+                {% for key, value in form.errors.items %}
+                    <li class="message error">{{value}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </section>
+
+    {% include 'footer.html' %}
+  </body>
+</html>

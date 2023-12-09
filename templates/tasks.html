@@ -1,0 +1,33 @@
+{% load static %}
+<section class="tasks-section">
+    <div class="tasks-header">
+        <h1>Welcome, <span>{{username}}</span></h1>
+        <a href="{% url 'logout' %}">Logout</a>
+    </div>
+    <div class="tasks-main">
+        <div class="task-add">
+            <input class="task-add-input" type="text" maxlength="100" placeholder="Enter a task...">
+            <button class="task-add-button"><i class="fa-solid fa-circle-plus"></i></button>
+        </div>
+        <div class="tasks-container">
+            {% comment %} <div class="task">
+                <textarea>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</textarea>
+                <div class="task-buttons">
+                    <button class="task-finish"><i class="fa-solid fa-check"></i></button>
+                    <button class="task-delete"><i class="fa-solid fa-x"></i></button>
+                </div>
+            </div> {% endcomment %}
+            {% comment %} <div class="task finished">
+                <textarea>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</textarea>
+                <div class="task-buttons">
+                    <button class="task-finish checked"><i class="fa-solid fa-rotate-left"></i></button>
+                    <button class="task-delete"><i class="fa-solid fa-x"></i></button>
+                </div>
+            </div> {% endcomment %}
+        </div>
+    </div>
+</section>
+<script defer type="text/javascript"> 
+    username = "{{ username|safe }}";
+</script>
+<script defer src="{% static 'js\main.js' %}"></script>

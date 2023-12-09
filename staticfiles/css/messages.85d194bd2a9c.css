@@ -1,0 +1,23 @@
+.message {
+    background-color: var(--white);
+    color: var(--pink);
+    font-family: var(--family);
+    font-size: clamp(1rem, 5vw ,1.25rem);
+    border: 4px solid transparent;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+    max-width: 50ch;
+}
+
+.error {
+    color: var(--red);
+    border-color: var(--red);
+}
+
+.success {
+    color: var(--green);
+    border-color: var(--green);
+}

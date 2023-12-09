@@ -1,0 +1,96 @@
+.login-section {
+    width: 100%;
+    min-height: 100svh;
+    padding: 6rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+    background-color: var(--pink);
+}
+
+.login-form {
+    background-color: var(--white);
+    font-family: var(--font-family);
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: min(80%, 400px);
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 550px) {
+    .login-form {
+        padding: 2rem;
+    }
+}
+
+.login-form h1 {
+    font-size: 2rem;
+    color: var(--pink);
+}
+
+.login-form div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    width: 100%;
+}
+
+.login-form div label {
+    font-size: 1.25rem;
+    color: var(--pink);
+}
+
+.login-form div input {
+    font-size: 1.125rem;
+    color: var(--pink);
+    caret-color: var(--pink);
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--pink);
+    border-radius: 30px;
+    transition: all .3s ease;
+}
+
+.login-form div input:focus {
+    border-radius: 10px;
+}
+
+.login-form div input[type="submit"]{
+    width: 100%;
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    background-color: var(--pink);
+    color: var(--white);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: color, background-color, border-radius .3s ease;
+}
+
+.login-form div input[type="submit"]:hover{
+    background-color: var(--white);
+    color: var(--pink);
+    border-color:var(--pink);
+    border-radius: 0;
+}
+
+.login-form div .register-link {
+    color: var(--pink);
+}
+
+.login-form div .register-link a {
+    color: var(--pink);
+    transition: all .3s ease;
+    font-weight: bold;
+}
+
+.login-form div .register-link a:hover {
+    opacity: 0.6;
+}
